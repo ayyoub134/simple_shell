@@ -33,7 +33,7 @@ return (0);
 return (1);
 }
 /**
-* my_custom_check_chain - checks if we should continue chaining based on last status
+* my_custom_check_chain - checks if we should continus on last status
 * @info: the parameter struct
 * @buf: the char buffer
 * @p: address of current position in buf
@@ -42,7 +42,8 @@ return (1);
 *
 * Return: Void
 */
-void my_custom_check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
+void my_custom_check_chain(info_t *info,
+		char *buf, size_t *p, size_t i, size_t len)
 {
 size_t j = *p;
 if (info->cmd_buf_type == CMD_AND)

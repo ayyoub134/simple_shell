@@ -14,7 +14,8 @@ return (NULL);
 if (!d)
 d = " ";
 for (i = 0; str[i] != '\0'; i++)
-if (!my_custom_is_delim(str[i], d) && (my_custom_is_delim(str[i + 1], d) || !str[i + 1]))
+if (!my_custom_is_delim(str[i], d) && (my_custom_is
+			_delim(str[i + 1], d) || !str[i + 1]))
 numwords++;
 if (numwords == 0)
 return (NULL);

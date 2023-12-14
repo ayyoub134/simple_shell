@@ -69,7 +69,7 @@ else
 return (new_node);
 }
 /**
-* my_custom_print_list_str - prints only the str element of a list_t linked list
+* my_custom_print_list_str - prints only the str element of a list_t
 * @h: pointer to first node
 *
 * Return: size of list

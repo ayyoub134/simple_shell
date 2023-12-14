@@ -44,7 +44,8 @@ return (buf);
 *
 * Return: full path of cmd if found or NULL
 */
-char *my_custom_find_path(my_custom_info_t *my_custom_info, char *pathstr, char *cmd)
+char *my_custom_find_path(my_custom_info_t *my_custom_info,
+		char *pathstr, char *cmd)
 {
 int i = 0, curr_pos = 0;
 char *path;

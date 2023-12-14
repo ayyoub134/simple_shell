@@ -50,7 +50,7 @@ typedef struct my_custom_list
 } my_custom_list_t;
 
 /**
- *struct my_custom_passinfo - contains pseudo-arguments to pass into a function,
+ *struct my_custom_passinfo - contains pseudo-arguments,
  *		allowing uniform prototype for function pointer struct
  *@arg: a string generated from getline containing arguments
  *@argv: an array of strings generated from arg
@@ -208,12 +208,14 @@ int _my_custom_setenv(my_custom_info_t *, char *, char *);
 char *my_custom_get_history_file(my_custom_info_t *info);
 int my_custom_write_history(my_custom_info_t *info);
 int my_custom_read_history(my_custom_info_t *info);
-int my_custom_build_history_list(my_custom_info_t *info, char *buf, int linecount);
+int my_custom_build_history_list(my_custom_info_t *info,
+		char *buf, int linecount);
 int my_custom_renumber_history(my_custom_info_t *info);
 
 /* my_custom_lists.c */
 my_custom_list_t *my_custom_add_node(my_custom_list_t **, const char *, int);
-my_custom_list_t *my_custom_add_node_end(my_custom_list_t **, const char *, int);
+my_custom_list_t *my_custom_add_node_end(my_custom_list_t **,
+		const char *, int);
 size_t my_custom_print_list_str(const my_custom_list_t *);
 int my_custom_delete_node_at_index(my_custom_list_t **, unsigned int);
 void my_custom_free_list(my_custom_list_t **);
@@ -227,7 +229,8 @@ ssize_t my_custom_get_node_index(my_custom_list_t *, my_custom_list_t *);
 
 /* my_custom_vars.c */
 int my_custom_is_chain(my_custom_info_t *, char *, size_t *);
-void my_custom_check_chain(my_custom_info_t *, char *, size_t *, size_t, size_t);
+void my_custom_check_chain(my_custom_info_t *, char *, size_t *,
+		size_t, size_t);
 int my_custom_replace_alias(my_custom_info_t *);
 int my_custom_replace_vars(my_custom_info_t *);
 int my_custom_replace_string(char **, char *);

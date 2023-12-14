@@ -28,7 +28,8 @@ return (1);
 c = *p;
 *p = 0;
 ret = my_custom_delete_node_at_index(&(info->alias),
-my_custom_get_node_index(info->alias, my_custom_node_starts_with(info->alias, str, -1)));
+my_custom_get_node_index(info->alias, my_custom_node
+	_starts_with(info->alias, str, -1)));
 *p = c;
 return (ret);
 }
@@ -98,7 +99,8 @@ p = my_custom_strchr(info->argv[i], '=');
 if (p)
 my_custom_set_alias(info, info->argv[i]);
 else
-my_custom_print_alias(my_custom_node_starts_with(info->alias, info->argv[i], '='));
+my_custom_print_alias(my_custom_node_starts
+		_with(info->alias, info->argv[i], '='));
 }
 return (0);
 }

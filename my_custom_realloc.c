@@ -33,7 +33,8 @@ free(a);
 * @new_size: byte size of the new block
 * Return: pointer to the old block
 */
-void *my_custom_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *my_custom_realloc(void *ptr, unsigned int old_size,
+		unsigned int new_size)
 {
 char *p;
 if (!ptr)

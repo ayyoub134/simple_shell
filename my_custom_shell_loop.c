@@ -100,7 +100,8 @@ void my_custom_find_cmd(my_custom_info_t *my_custom_info)
 	if (!k)
 	return;
 
-path = my_custom_find_path(my_custom_info, _my_custom_getenv(my_custom_info, "PATH="), my_custom_info->argv[0]);
+path = my_custom_find_path(my_custom_info,
+		_my_custom_getenv(my_custom_info, "PATH="), my_custom_info->argv[0]);
 	if (path)
 	{
 	my_custom_info->path = path;
@@ -108,8 +109,10 @@ path = my_custom_find_path(my_custom_info, _my_custom_getenv(my_custom_info, "PA
 	}
 	else
 	{
-if ((my_custom_interactive(my_custom_info) || _my_custom_getenv(my_custom_info, "PATH=")
-|| my_custom_info->argv[0][0] == '/') && my_custom_is_cmd(my_custom_info, my_custom_info->argv[0]))
+if ((my_custom_interactive(my_custom_info) || _my_custom_getenv(my_custom
+				_info, "PATH=")
+|| my_custom_info->argv[0][0] == '/') && my_custom_is_cmd(my_custom_info,
+	my_custom_info->argv[0]))
 	my_custom_fork_cmd(my_custom_info);
 	else if (*(my_custom_info->arg) != '\n')
 	{
@@ -138,7 +141,8 @@ void my_custom_fork_cmd(my_custom_info_t *my_custom_info)
 	}
 	if (child_pid == 0)
 	{
-if (execve(my_custom_info->path, my_custom_info->argv, my_custom_get_environ(my_custom_info)) == -1)
+	if (execve(my_custom_info->path, my_custom_info->argv,
+			my_custom_get_environ(my_custom_info)) == -1)
 	{
 	my_custom_free_info(my_custom_info, 1);
 	if (errno == EACCES)

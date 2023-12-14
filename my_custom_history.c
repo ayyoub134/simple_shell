@@ -11,7 +11,8 @@ char *buf, *dir;
 dir = my_custom_getenv(info, "HOME=");
 if (!dir)
 return (NULL);
-buf = my_custom_malloc(sizeof(char) * (my_custom_strlen(dir) + my_custom_strlen(HIST_FILE) + 2));
+buf = my_custom_malloc(sizeof(char) * (my_custom_strlen(dir) + my_custom
+			_strlen(HIST_FILE) + 2));
 if (!buf)
 return (NULL);
 buf[0] = 0;
